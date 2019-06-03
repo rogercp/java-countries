@@ -231,7 +231,7 @@ public class CountriesList
         {
             if(tester.test(c))
             {
-                countryList.add(c);
+                tempCountryList.add(c);
             }
         }
         return tempCountryList;

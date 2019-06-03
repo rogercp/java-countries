@@ -21,6 +21,16 @@ public class Country
     }
 
 
+    public Country(Country toClone)
+    {
+        this.id=toClone.getId();
+        this.name = toClone.getName();
+        this.population = toClone.getPopulation();
+        this.landMass=toClone.getLandMass();
+        this.age = toClone.getAge();
+    }
+
+
     public long getId()
     {
         return id;

@@ -10,7 +10,7 @@ public class WebcountriesApplication
 
     public static void main(String[] args)
     {
-        myCountryList=new CountriesList();
+        myCountryList = new CountriesList();
         SpringApplication.run(WebcountriesApplication.class, args);
 
     }
