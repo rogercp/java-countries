@@ -38,7 +38,7 @@ public class NameController
     ///localhost:7777/names/size/3
     @GetMapping(value="/size/{length}",
             produces={"application/json"})
-    public ResponseEntity<?> getCountryByFirstLetter(@PathVariable int length)
+    public ResponseEntity<?> getCountryByNameLength(@PathVariable int length)
     {
         ArrayList<Country> rtnCountri = WebcountriesApplication.myCountryList.
                 findCountries(c -> c.getName().length() >= length);
