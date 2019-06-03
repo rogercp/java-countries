@@ -2,29 +2,29 @@ package com.lambdaschool.webcountries;
 
 import java.util.concurrent.atomic.AtomicLong;
 
-public class Countries
+public class Country
 {
     private static final AtomicLong counter = new AtomicLong();
     private long id;
     private String name;
     private int population;
+    private int landMass;
     private int  age;
 
-    public Countries(String name, int population, int age)
+    public Country(String name, int population, int landMass, int age)
     {
         this.id=counter.incrementAndGet();
         this.name = name;
         this.population = population;
+        this.landMass=landMass;
         this.age = age;
     }
-
 
 
     public long getId()
     {
         return id;
     }
-
 
     public String getName()
     {
@@ -46,6 +46,16 @@ public class Countries
         this.population = population;
     }
 
+    public int getLandMass()
+    {
+        return landMass;
+    }
+
+    public void setLandMass(int landMass)
+    {
+        this.landMass = landMass;
+    }
+
     public int getAge()
     {
         return age;
@@ -59,7 +69,7 @@ public class Countries
     @Override
     public String toString()
     {
-        return "Countries{" +
+        return "Country{" +
                 "name='" + name + '\'' +
                 ", population=" + population +
                 ", age=" + age +
