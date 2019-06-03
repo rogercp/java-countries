@@ -37,4 +37,15 @@ public class PopulationController
         ArrayList<Country> rtnMin=WebcountriesApplication.myCountryList.findCountries(c -> (c.getPopulation()==minPop));
         return new ResponseEntity<>(rtnMin, HttpStatus.OK);
     }
+
+    //localhost:7777/population/max
+    @RequestMapping(value="/max",
+            produces={"application/json"})
+    public ResponseEntity<?> getCountryWithBiggestPop()
+    {
+        WebcountriesApplication.myCountryList.countryList.sort(Comparator.comparingInt(Country::getPopulation).reversed());
+        int maxPop=WebcountriesApplication.myCountryList.countryList.get(0).getPopulation();
+        ArrayList<Country> rtnMax=WebcountriesApplication.myCountryList.findCountries(c -> (c.getPopulation()==maxPop));
+        return new ResponseEntity<>(rtnMax, HttpStatus.OK);
+    }
 }
